@@ -1,1 +1,67 @@
-<p>signup works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-navy">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Registro de un usuario <small>Ingrese por favor todos los datos necesarios</small>
+                    </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="quickForm" (ngSubmit)="formSubmit()">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="exampleInputUsername1">Username</label>
+                                <input type="text" [(ngModel)]="usuario.username" name="username" class="form-control" id="exampleInputUsername1"
+                                    placeholder="Ingrese un username" required/>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="exampleInputName1">Nombre</label>
+                                <input type="text" [(ngModel)]="usuario.nombre" name="nombre" class="form-control" id="exampleInputName1"
+                                    placeholder="Ingrese un nombre" required/>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="exampleInputApellido1">Apellido</label>
+                                <input type="text" [(ngModel)]="usuario.apellido" name="nombre" class="form-control" id="exampleInputApellido1"
+                                    placeholder="Ingrese un apellido" required/>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="exampleInputTelefono1">Telefono</label>
+                                <input type="number" [(ngModel)]="usuario.telefono" name="telefono" class="form-control" id="exampleInputTelefono1"
+                                    placeholder="Ingrese un telefono" required/>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="form-group col-md-8">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" [(ngModel)]="usuario.email" name="email" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Enter email" required/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" [(ngModel)]="usuario.password" name="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-dark">Registrar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6"></div>
+        <!--/.col (right) -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->

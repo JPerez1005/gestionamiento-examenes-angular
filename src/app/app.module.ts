@@ -10,6 +10,8 @@ import { NavbarComponent } from "./componentes/navbar/navbar.component";
 import { SidebarLeftComponent } from "./componentes/sidebar-left/sidebar-left.component";
 import { FooterComponent } from "./componentes/footer/footer.component";
 import { SidebarRightComponent } from "./componentes/sidebar-right/sidebar-right.component";
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     declarations: [
@@ -23,6 +25,7 @@ import { SidebarRightComponent } from "./componentes/sidebar-right/sidebar-right
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule,
         HttpClientModule,
         NavbarComponent,

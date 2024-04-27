@@ -1,45 +1,41 @@
-<body class="hold-transition light-mode sidebar-mini">
-  <!-- Site wrapper -->
-  <div class="wrapper">
-      
-      <app-navbar></app-navbar>
+<!-- Site wrapper -->
+<div class="wrapper">
 
-      <app-sidebar-left></app-sidebar-left>
+    <app-navbar></app-navbar>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-          <section class="content-header">
-              <div class="container-fluid">
-                  <div class="row mb-2">
-                      <div class="col-sm-6">
-                          <h1>Blank Page</h1>
-                      </div>
-                      <div class="col-sm-6">
-                          <ol class="breadcrumb float-sm-right">
-                              <li class="breadcrumb-item"><a href="#">Home</a></li>
-                              <li class="breadcrumb-item active">Blank Page</li>
-                          </ol>
-                      </div>
-                  </div>
-              </div><!-- /.container-fluid -->
-          </section>
+    <app-sidebar-left></app-sidebar-left>
 
-          <!-- Main content -->
-          <section class="content">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Blank Page</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Blank Page</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-              <router-outlet />
+        <!-- Main content -->
+        <section class="content">
 
-          </section>
-          <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
+            <router-outlet />
 
-      <app-footer></app-footer>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
-      <app-sidebar-right></app-sidebar-right>
-  </div>
-  <!-- ./wrapper -->
-</body>
+    <app-footer></app-footer>
 
-
+    <app-sidebar-right></app-sidebar-right>
+</div>
+<!-- ./wrapper -->

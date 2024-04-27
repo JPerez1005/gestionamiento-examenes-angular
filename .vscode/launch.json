@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "PaginaWebExamenesApplication",
+      "request": "launch",
+      "mainClass": "com.sistema.GestionamientoExamenes.PaginaWebExamenesApplication",
+      "projectName": "GestionamientoExamenes"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
