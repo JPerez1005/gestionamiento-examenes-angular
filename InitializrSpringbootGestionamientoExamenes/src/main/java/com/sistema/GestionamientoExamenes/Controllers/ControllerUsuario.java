@@ -40,6 +40,7 @@ public class ControllerUsuario {
         ur.setUsuario(usuario);
         ur.setRol(rol);
         
+        roles.add(ur);
         return su.guardarUsuario(usuario, roles);
     }
     
