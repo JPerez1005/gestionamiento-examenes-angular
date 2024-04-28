@@ -30,7 +30,6 @@ public class ControllerUsuario {
     public Usuario guardarUsuario(@RequestBody Usuario usuario)
     throws Exception{
         usuario.setPerfil("default.png");
-        Set<UsuarioRol> roles=new HashSet<>();
         
         Rol rol=new Rol();
         rol.setRolId(1L);
@@ -40,8 +39,8 @@ public class ControllerUsuario {
         ur.setUsuario(usuario);
         ur.setRol(rol);
         
-        roles.add(ur);
-        return su.guardarUsuario(usuario, roles);
+        System.out.println(ur);
+        return su.guardarUsuario(usuario, rol, ur);
     }
     
     @GetMapping("/{username}")

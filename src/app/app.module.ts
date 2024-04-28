@@ -10,8 +10,12 @@ import { NavbarComponent } from "./componentes/navbar/navbar.component";
 import { SidebarLeftComponent } from "./componentes/sidebar-left/sidebar-left.component";
 import { FooterComponent } from "./componentes/footer/footer.component";
 import { SidebarRightComponent } from "./componentes/sidebar-right/sidebar-right.component";
-import { FormsModule } from '@angular/forms';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {merge} from 'rxjs';
 
 @NgModule({
     declarations: [
@@ -20,7 +24,8 @@ import { FormsModule } from '@angular/forms';
         LoginComponent
     ],
     providers: [
-        provideClientHydration()
+        provideClientHydration(),
+        provideAnimationsAsync()
     ],
     bootstrap: [AppComponent],
     imports: [
@@ -31,7 +36,11 @@ import { FormsModule } from '@angular/forms';
         NavbarComponent,
         SidebarLeftComponent,
         FooterComponent,
-        SidebarRightComponent
+        SidebarRightComponent,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class AppModule { }

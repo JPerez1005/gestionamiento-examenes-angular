@@ -1,5 +1,6 @@
 package com.sistema.GestionamientoExamenes.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -25,9 +26,11 @@ public class UsuarioRol {
     private Long usuarioRolId;
     
     @ManyToOne(fetch=FetchType.EAGER)
+    @JsonIgnore
     private Usuario usuario;
     
     @ManyToOne
+    @JsonIgnore
     private Rol rol;
     
 }

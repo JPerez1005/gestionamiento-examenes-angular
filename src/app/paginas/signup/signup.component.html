@@ -15,43 +15,76 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="form-group col-md-3">
+                              <mat-form-field>
                                 <label for="exampleInputUsername1">Username</label>
-                                <input type="text" [(ngModel)]="usuario.username" name="username" class="form-control" id="exampleInputUsername1"
+                                <input matInput type="text" [(ngModel)]="usuario.username" name="username" class="form-control" id="exampleInputUsername1"
                                     placeholder="Ingrese un username" required/>
+                              </mat-form-field>
                             </div>
                             <div class="form-group col-md-3">
+                              <mat-form-field>
                                 <label for="exampleInputName1">Nombre</label>
-                                <input type="text" [(ngModel)]="usuario.nombre" name="nombre" class="form-control" id="exampleInputName1"
+                                <input matInput type="text" [(ngModel)]="usuario.nombre" name="nombre" class="form-control" id="exampleInputName1"
                                     placeholder="Ingrese un nombre" required/>
+                              </mat-form-field>
                             </div>
                             <div class="form-group col-md-3">
+                              <mat-form-field>
                                 <label for="exampleInputApellido1">Apellido</label>
-                                <input type="text" [(ngModel)]="usuario.apellido" name="nombre" class="form-control" id="exampleInputApellido1"
+                                <input matInput type="text" [(ngModel)]="usuario.apellido" name="nombre" class="form-control" id="exampleInputApellido1"
                                     placeholder="Ingrese un apellido" required/>
+                              </mat-form-field>
                             </div>
                             <div class="form-group col-md-3">
+                              <mat-form-field>
                                 <label for="exampleInputTelefono1">Telefono</label>
-                                <input type="number" [(ngModel)]="usuario.telefono" name="telefono" class="form-control" id="exampleInputTelefono1"
-                                    placeholder="Ingrese un telefono" required/>
+                                <input type="number"
+                                [(ngModel)]="usuario.telefono"
+                                matInput
+                                name="telefono"
+                                class="form-control"
+                                id="exampleInputTelefono1"
+                                placeholder="Ingrese un telefono"
+                                required/>
+                              </mat-form-field>
                             </div>
                         </div>
                         <div class="row">
-
                             <div class="form-group col-md-8">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" [(ngModel)]="usuario.email" name="email" class="form-control" id="exampleInputEmail1"
-                                    placeholder="Enter email" required/>
+                              <mat-form-field>
+                                <label>Dirección de email</label>
+                                <input type="email"
+                                matInput
+                                [formControl]="email"
+                                (blur)="updateErrorMessage()"
+                                [(ngModel)]="usuario.email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Ingrese un email"
+                                required/>
+                                @if (email.invalid) {
+                                  <mat-error>{{errorMessage}}</mat-error>
+                                }
+                              </mat-form-field>
                             </div>
                             <div class="form-group col-md-4">
+                              <mat-form-field>
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" [(ngModel)]="usuario.password" name="password" class="form-control" id="exampleInputPassword1"
-                                    placeholder="Password" required/>
+                                <input type="password"
+                                matInput
+                                [(ngModel)]="usuario.password"
+                                name="password"
+                                class="form-control"
+                                id="exampleInputPassword1"
+                                placeholder="digite la contraseña"
+                                required/>
+                              </mat-form-field>
                             </div>
                         </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer text-center">
-                        <button type="submit" class="btn btn-dark">Registrar</button>
+                        <button type="submit" class="btn btn-dark swalDefaultSuccess">Registrar</button>
                     </div>
                 </form>
             </div>

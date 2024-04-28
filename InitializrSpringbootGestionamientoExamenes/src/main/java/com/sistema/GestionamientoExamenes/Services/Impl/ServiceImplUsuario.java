@@ -1,10 +1,13 @@
 package com.sistema.GestionamientoExamenes.Services.Impl;
 
 import com.sistema.GestionamientoExamenes.Services.ServiceUsuario;
+import com.sistema.GestionamientoExamenes.models.Rol;
 import com.sistema.GestionamientoExamenes.models.Usuario;
 import com.sistema.GestionamientoExamenes.models.UsuarioRol;
 import com.sistema.GestionamientoExamenes.repositories.RepositoryRol;
 import com.sistema.GestionamientoExamenes.repositories.RepositoryUsuario;
+import com.sistema.GestionamientoExamenes.repositories.RepositoryUsuarioRol;
+
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +22,10 @@ public class ServiceImplUsuario implements ServiceUsuario{
     
     @Autowired private RepositoryRol rr;
 
+    @Autowired private RepositoryUsuarioRol rur;
+
     @Override
-    public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> usuarioRoles)
+    public Usuario guardarUsuario(Usuario usuario, Rol rol, UsuarioRol ur)
     throws Exception {
         Usuario u=ru.findByUsername(usuario.getUsername());
         
@@ -28,11 +33,9 @@ public class ServiceImplUsuario implements ServiceUsuario{
             System.out.println("El usuario ya existe");
             throw new Exception("El usuario ya está presente");
         }else{
-            for(UsuarioRol ur:usuarioRoles){
-                rr.save(ur.getRol());
-            }
-            usuario.getUsuarioRoles().addAll(usuarioRoles);
+            rr.save(rol);
             u=ru.save(usuario);
+            rur.save(ur);
         }
         return u;
     }
