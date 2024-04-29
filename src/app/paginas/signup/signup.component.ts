@@ -27,6 +27,7 @@ export class SignupComponent {
   constructor(
     private userService: UserService
   ) {
+
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
